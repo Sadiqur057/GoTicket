@@ -5,6 +5,7 @@ let ticketPrice = 550;
 let totalPrice = getElementTextValueById("total-price");
 let couponText;
 let discountedPrice;
+const couponForm = document.getElementById('coupon-form');
 
 // handling onclick of seats
 for (const seat of seats) {
@@ -39,10 +40,14 @@ for (const seat of seats) {
       totalPrice += ticketPrice;
     }
 
+    // enable couple code input field on changes to selected seat and reset discount;
+    couponForm.classList.remove('hidden');
+    setElementValueById("discount", 0);
     setElementValueById("seat-taken", seatCounts);
     setElementValueById("seat-left", seatLeft);
     setElementValueById("total-price", totalPrice);
     setElementValueById("final-price", totalPrice);
+
   });
 }
 
@@ -52,10 +57,14 @@ couponCodeInputField.addEventListener("keyup", function (e) {
   const text = e.target.value;
   couponText = text.split(" ").join("").toUpperCase();
   let disabledBtn = document.getElementById("coupon-apply-btn");
-  if (couponText === "NEW15" || couponText === "COUPLE20") {
-    disabledBtn.removeAttribute("disabled");
-  } else {
-    disabledBtn.setAttribute('disabled',true);
+
+  // if user has selected at least one seat, then he can apply coupon code
+  if(seatCounts>0){
+    if (couponText === "NEW15" || couponText === "COUPLE20") {
+      disabledBtn.removeAttribute("disabled");
+    } else {
+      disabledBtn.setAttribute('disabled',true);
+    }
   }
 });
 
@@ -70,7 +79,9 @@ couponApplyBtn.addEventListener('click', function(){
   }else if(couponText === "COUPLE20"){
     discount = calculateDiscount(price,20);
   }
+  discount = Math.floor(discount);
   const discountedPrice = price - discount;
   setElementValueById('discount',discount) 
   setElementValueById('final-price',(discountedPrice)); 
+  couponForm.classList.add('hidden');
 })
