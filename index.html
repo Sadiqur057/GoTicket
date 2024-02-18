@@ -130,7 +130,7 @@
         </div>
         <div class="bg-[#f78c9c] flex items-center rounded-3xl h-[140px] md:h-auto">
           <div class="font-inter p-4 md:p-12">
-            <h4 class="font-black text-c-heading text-xl md:text-4xl">15% OFF</h4>
+            <h4 class="font-black text-c-heading text-xl md:text-4xl">20% OFF</h4>
             <h6 class="font-semibold text-sm md:text-xl my-1">on your next purchase</h6>
             <p class="font-medium text-sm md:text-lg text-c-secondary">use by January 2024</p>
           </div>
@@ -138,7 +138,7 @@
             <img class="h-full object-fill" src="images/cupon-devider.png" alt="">
           </div>
           <div class="font-raleway p-4 md:p-12 text-center">
-            <h4 class="font-bold text-xl md:text-3xl">NEW15</h4>
+            <h4 class="font-bold text-xl md:text-3xl">Couple 20</h4>
             <p class="font-medium text-sm md:text-xl text-c-secondary mt-[10px]">Coupon Code</p>
           </div>
         </div>
@@ -179,7 +179,7 @@
                 </div>
                 <div class="flex bg-[#1dd10026] px-4 py-3 items-center justify-center my-4 rounded-xl gap-3">
                   <img class="h-7 w-7" src="images/seat-green.png" alt="">
-                  <p class="text-c-primary"><span>40</span> Seats left</p>
+                  <p class="text-c-primary"><span id="seat-left">40</span> Seats left</p>
                 </div>
               </div>
               <!-- route info -->
@@ -337,20 +337,15 @@
                 <!-- head -->
                 <thead class="border-b-[1px] border-dashed">
                   <tr class="text-c-heading font-medium text-base">
-                    <td class="relative">Seat &nbsp;<span
-                        class="font-bold text-sm px-3 bg-c-primary text-white absolute bottom-4 rounded-lg">2</span>
+                    <td class="relative">Seat &nbsp;<span id="seat-taken"
+                        class="font-bold text-sm px-3 bg-c-primary text-white absolute bottom-4 rounded-lg">0</span>
                     </td>
                     <td>Class</td>
                     <td>Price</td>
                   </tr>
                 </thead>
                 <tbody id="selected-tickets">
-                  <!-- row 1 -->
-                  <tr>
-                    <td class="seat-no">C2</td>
-                    <td>Economy</td>
-                    <td>550</td>
-                  </tr>
+
 
                 </tbody>
               </table>
@@ -358,20 +353,21 @@
             </div>
             <div class="font-inter py-3 px-4 md:px-6">
               <div class="flex justify-between">
-                <h3 class="font-medium text-base">Total Price</h3>
-                <h3 class="font-medium">BDT <span>1100</span></h3>
+                <h3 class="font-medium text-base" >Total Price</h3>
+                <h3 class="font-medium">BDT <span id="total-price">0</span></h3>
               </div>
 
               <!-- coupon form -->
               <div class="bg-white flex justify-between pl-3 md:pl-5 pr-2 py-2 rounded-xl my-5">
-                <input class="w-[60%] text-sm md:text-base" type="text" placeholder="Have any coupon?">
-                <a class="font-semibold px-3 md:px-[18px] py-2 md:py-[10px] text-white bg-c-primary rounded-xl text-sm md:text-base">Apply</a>
+                <input id="coupon-code" class="w-[60%] text-sm md:text-base outline-none " type="text" placeholder="Have any coupon?">
+                <button id="coupon-apply-btn" class="font-semibold px-3 md:px-[18px] py-2 md:py-[10px] text-white bg-c-primary rounded-xl text-sm md:text-base cursor-pointer btn hover:bg-green-500 border-none outline-none" disabled >Apply</button>
+                <!-- disabled="disabled" -->
               </div>
 
               <!-- grand total -->
               <div class="flex justify-between">
                 <h3 class="font-medium text-base">Grand Total</h3>
-                <h3 class="font-medium">BDT <span>1100</span></h3>
+                <h3 class="font-medium">BDT <span id="final-price">0</span></h3>
               </div>
 
             </div>
@@ -382,13 +378,13 @@
               <input type="text" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full" id="name" />
             </label>
             <label for="phone" class="font-semibold"> Phone Number*
-              <input type="text" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full" id="phone" />
+              <input type="number" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full no-spinner" id="phone" inputmode="numeric"/>
             </label>
             <label for="email" class="font-semibold"> Email ID*
               <input type="email" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full" id="email" />
             </label>
-            <button
-              class="bg-c-primary border-none text-white w-full py-3 md:py-5 rounded-xl md:text-xl font-raleway font-extrabold">Next</button>
+            <button id="proceed-btn"
+              class="btn bg-c-primary border-none text-white w-full rounded-xl md:text-xl font-raleway font-extrabold hover:bg-green-500" disabled>Next</button>
           </form>
           <div class="flex gap-2 justify-between mt-5 text-c-secondary font-inter text-center">
             <a class="underline md:flex-1" href="#">Terms and Conditions</a>
