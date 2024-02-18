@@ -1,28 +1,39 @@
-function getElementTextById(elementID) {
-  const element = document.getElementById(elementID);
+function getElementTextById(elementId) {
+  const element = document.getElementById(elementId);
   const elementText = element.innerText;
   return elementText;
 }
 
-function setBackgroundColorById(elementID) {
-  const element = document.getElementById(elementID);
-  // console.log(element);
+function getElementTextValueById(elementId){
+  const element = document.getElementById(elementId);
+  const elementText = element.innerText;
+  const value = parseInt(elementText);
+  return value;
+}
+
+function setElementValueById(elementId,value){
+  const element = document.getElementById(elementId);
+  element.innerText = value;
+}
+
+
+function setBackgroundColorById(elementId) {
+  const element = document.getElementById(elementId);
   element.classList.remove("bg-c-seat");
   element.classList.add("bg-c-primary");
   element.classList.add("text-white");
 }
 
-function removeBackgroundColorById(elementID) {
-  const element = document.getElementById(elementID);
-  // console.log(element);
+function removeBackgroundColorById(elementId) {
+  const element = document.getElementById(elementId);
   element.classList.add("bg-c-seat");
   element.classList.remove("bg-c-primary");
   element.classList.remove("text-white");
 }
 
 
-function addElementById(elementID) {
-  const seatName = elementID;
+function addElementById(elementId) {
+  const seatName = elementId;
   const innerHTML = `
   <tr id="seat-${seatName}">
     <td class="seat-no">${seatName}</td>
@@ -36,5 +47,12 @@ function addElementById(elementID) {
 function removeElementBySeatName(SeatName) {
   const seatNo = document.getElementById(SeatName);
     seatNo.remove()
-    // console.log(seatNo)
+}
+
+
+function calculateDiscount(totalPrice,discountPercentage){
+  const discountedPrice = totalPrice - totalPrice * discountPercentage/100;
+  console.log(totalPrice,discountPercentage,discountedPrice)
+  
+  return discountedPrice;
 }
