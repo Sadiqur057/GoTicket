@@ -85,3 +85,20 @@ couponApplyBtn.addEventListener('click', function(){
   setElementValueById('final-price',(discountedPrice)); 
   couponForm.classList.add('hidden');
 })
+
+
+// handling enable/disable coupon code submit button
+const phoneNumberInputField = document.getElementById("phone");
+phoneNumberInputField.addEventListener("keyup", function (e) {
+  const text = e.target.value;
+  let disabledBtn = document.getElementById("proceed-btn");
+  console.log(text.length)
+  // if user has selected at least one seat, then he can apply coupon code
+
+  if(seatCounts>0 && text.length>0){
+    disabledBtn.removeAttribute("disabled");
+  } else {
+    disabledBtn.setAttribute('disabled',true);
+  }
+  
+});
