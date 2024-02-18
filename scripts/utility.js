@@ -51,8 +51,8 @@ function removeElementBySeatName(SeatName) {
 
 
 function calculateDiscount(totalPrice,discountPercentage){
-  const discountedPrice = totalPrice - totalPrice * discountPercentage/100;
-  console.log(totalPrice,discountPercentage,discountedPrice)
+  const discount = totalPrice * discountPercentage/100;
+  console.log(totalPrice,discountPercentage,discount)
   
-  return discountedPrice;
+  return discount;
 }

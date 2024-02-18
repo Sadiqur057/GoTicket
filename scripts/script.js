@@ -66,9 +66,11 @@ const couponApplyBtn = document.getElementById("coupon-apply-btn");
 couponApplyBtn.addEventListener('click', function(){
   const price = getElementTextValueById('final-price')
   if (couponText === "NEW15"){
-    discountedPrice = calculateDiscount(price,15);
+    discount = calculateDiscount(price,15);
   }else if(couponText === "COUPLE20"){
-    discountedPrice = calculateDiscount(price,20);
+    discount = calculateDiscount(price,20);
   }
-  setElementValueById('final-price',discountedPrice) 
+  const discountedPrice = price - discount;
+  setElementValueById('discount',discount) 
+  setElementValueById('final-price',(discountedPrice)); 
 })
