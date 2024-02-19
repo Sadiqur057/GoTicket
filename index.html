@@ -111,10 +111,17 @@
   <main>
     <!-- coupon section -->
     <section class="md:mt-16 w-[90%] md:w-5/6 mx-auto">
+
+        <p class=" text-white text-sm md:text-base font-medium font-poppins p-3 px-10 bg-c-primary self-end fixed top-[40px] md:top-[60px] lg:top-[80px]  md:right-[10%] right-[7%] rounded-lg hidden" id="success-msg"></p>
+      
+        <p class=" text-white  text-sm md:text-base font-medium font-poppins p-3 px-10 bg-[#efa43a] fixed top-[40px] md:top-[60px] lg:top-[80px] rounded-lg self-end md:right-[10%] right-[7%] hidden" id="warning-msg"></p>
+
+        <p class=" text-white text-sm md:text-base font-medium font-poppins p-3 px-10 bg-[#ca252d] fixed  top-[40px] md:top-[60px] lg:top-[80px]  md:right-[10%] right-[7%] rounded-lg self-end hidden" id="error-msg"></p>
+
       <h3 class="font-bold text-3xl md:text-4xl text-center py-12">Best offers for you</h3>
-      <div class="flex flex-col lg:flex-row gap-6 items-center lg:items-stretch mb-0 md:mb-14">
+      <div class="flex flex-col lg:flex-row gap-6 items-center lg:items-stretch mb-0 md:mb-14 justify-center">
         <div class="bg-[#ffbf0f] flex items-center rounded-3xl h-[140px] md:h-auto">
-          <div class="font-inter p-4 md:p-12">
+          <div class="font-inter pl-5 pr-1 md:p-12">
             <h4 class="font-black text-c-heading text-xl md:text-4xl">15% OFF</h4>
             <h6 class="font-semibold text-sm md:text-xl my-1">on your next purchase</h6>
             <p class="font-medium text-sm md:text-lg text-c-secondary">use by January 2024</p>
@@ -122,13 +129,13 @@
           <div class="h-full">
             <img class="h-full object-fill" src="images/cupon-devider.png" alt="">
           </div>
-          <div class="font-raleway p-4 md:p-12 text-center">
+          <div class="font-raleway pr-5 pl-1 md:p-12 text-center">
             <h4 class="font-bold text-xl md:text-3xl">NEW15</h4>
             <p class="font-medium text-sm md:text-xl text-c-secondary mt-[10px]">Coupon Code</p>
           </div>
         </div>
         <div class="bg-[#f78c9c] flex items-center rounded-3xl h-[140px] md:h-auto">
-          <div class="font-inter p-4 md:p-12">
+          <div class="font-inter pl-5 pr-1 md:p-12">
             <h4 class="font-black text-c-heading text-xl md:text-4xl">20% OFF</h4>
             <h6 class="font-semibold text-sm md:text-xl my-1">on your next purchase</h6>
             <p class="font-medium text-sm md:text-lg text-c-secondary">use by January 2024</p>
@@ -136,7 +143,7 @@
           <div class="h-full">
             <img class="h-full object-fill" src="images/cupon-devider.png" alt="">
           </div>
-          <div class="font-raleway p-4 md:p-12 text-center">
+          <div class="font-raleway pr-5 pl-1 md:p-12 text-center">
             <h4 class="font-bold text-xl md:text-3xl">Couple 20</h4>
             <p class="font-medium text-sm md:text-xl text-c-secondary mt-[10px]">Coupon Code</p>
           </div>
@@ -153,11 +160,11 @@
     </section>
 
     <!-- bus & ticket information section -->
-    <section class="mt-8 md:mt-20 bg-[#f7f8f8] rounded-t-[88px] pb-8 lg:pb-20">
+    <section class="mt-8 md:mt-20 bg-[#f7f8f8] rounded-2xl md:rounded-t-[88px] pb-8 lg:pb-20">
       <div class="w-[90%] md:w-5/6 mx-auto">
         <div class="pt-8 md:pt-20 text-center">
           <h1 class="font-bold text-3xl md:text-4xl text-c-heading font-raleway">Smart Express</h1>
-          <p class="md:text-lg font-inter w-5/6 md:w-[55%] mx-auto py-5 md:py-8">Smart Express unlocks amazing deals on your next trip. Find the best ticket price, starts today with Smart Express!</p>
+          <p class="md:text-lg font-inter w-5/6 md:w-[55%] mx-auto py-5 md:py-8 mb-3">Smart Express unlocks amazing deals on your next trip. Find the best ticket price, starts today with Smart Express!</p>
         </div>
         <div class="bg-white rounded-2xl">
           <!-- route info container -->
@@ -175,13 +182,13 @@
                     <p class="font-inter md:text-xl font-c-secondary">Coach-009-WEB</p>
                   </div>
                 </div>
-                <div class="flex bg-[#1dd10026] px-4 py-3 items-center justify-center my-4 rounded-xl gap-3">
+                <div class="flex bg-[#1dd10026] px-4 py-[10px] md:py-3 items-center justify-center my-4 rounded-xl gap-3">
                   <img class="h-7 w-7" src="images/seat-green.png" alt="">
                   <p class="text-c-primary"><span id="seat-left">40</span> Seats left</p>
                 </div>
               </div>
               <!-- route info -->
-              <div class="bg-[#f7f8f8] p-5 lg:p-8 rounded-xl md:text-lg">
+              <div class="bg-[#f7f8f8] p-5 lg:p-8 rounded-xl md:text-lg text-sm">
                 <div class="flex justify-between border-b-2 border-dashed pb-4 font-raleway font-semibold ">
                   <p class="text-c-secondary">Route</p>
                   <p class="text-c-heading">Dhaka - Sylhet</p>
@@ -212,7 +219,7 @@
               <div class="text-center flex flex-col justify-center">
                 <img class="h-14 w-14 mx-auto mb-3" src="images/fare.png" alt="">
                 <h3 class="font-bold text-2xl text-c-heading">550 Taka</h3>
-                <p class="font-semibold text-2xl py-2 text-c-secondary">Per Seat</p>
+                <p class="font-semibold text-2xl pb-4 md:pb-2 pt-2 text-c-secondary ">Per Seat</p>
               </div>
             </div>
           </div>
@@ -227,7 +234,7 @@
           class="lg:col-span-7 border-b-2  lg:border-r-2 lg:border-b-0 border-dashed  mb-4 mt:mb-0 pb-10 lg:pb-0 lg:pr-5">
           <h1 class="font-semibold text-2xl font-raleway mb-6">select your seat</h1>
           <div
-            class="border-dashed border-t-[1px] border-b-[1px] flex items-center font-inter font-medium text-lg gap-4 justify-between py-4">
+            class="border-dashed border-t-[1px] border-b-[1px] flex items-center font-inter font-medium md:text-lg gap-4 justify-between py-4">
             <div class="flex items-center gap-2">
               <img src="images/seat-gray.png" alt="">
               <p class="text-c-secondary">Available</p>
@@ -382,15 +389,15 @@
           </div>
           <!-- user info form -->
           <form class="mt-6 font-inter">
-            <label for="name" class="font-semibold"> Passenger Name
-              <input type="text" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full" id="name" />
+            <label for="name" class="font-semibold"> Passenger Name*
+              <input type="text" placeholder="Enter your name" class="mt-3 mb-6 input input-bordered w-full" id="name" required />
             </label>
             <label for="phone" class="font-semibold"> Phone Number*
-              <input type="number" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full no-spinner"
+              <input type="number" placeholder="Enter your phone number" class="mt-3 mb-6 input input-bordered w-full no-spinner"
                 id="phone" required />
             </label>
             <label for="email" class="font-semibold"> Email ID
-              <input type="email" placeholder="Type here" class="mt-3 mb-6 input input-bordered w-full" id="email" />
+              <input type="email" placeholder="Enter your email id" class="mt-3 mb-6 input input-bordered w-full" id="email" />
             </label>
           </form>
           <div>
@@ -419,7 +426,7 @@
             </dialog>
 
           </div>
-          <div class="flex gap-2 justify-between mt-5 text-c-secondary font-inter text-center">
+          <div class="flex gap-2 justify-between mt-5 text-c-secondary font-inter text-center text-sm md:text-base">
             <a class="underline md:flex-1" href="#">Terms and Conditions</a>
             <a class="underline md:flex-1" href="#">Cancellation Policy</a>
           </div>
@@ -428,17 +435,17 @@
     </section>
 
   </main>
-  <footer class="p-10 bg-[#030712] text-white font-inter">
-    <div class="w-[90%] md:w-5/6 mx-auto ">
+  <footer class="py-10 md:py-20 bg-[#030712] text-white font-inter">
+    <div class="w-[88%] md:w-5/6 mx-auto ">
       <div
         class="flex flex-col md:flex-row items-center md:justify-between border-b-2 pb-8 lg:pb-10 border-dashed border-[#ffffff4d] gap-4">
-        <div class="text-center md:text-left md:w-1/2 lg:w-[60%]   mx-auto">
+        <div class="text-center md:text-left md:w-1/2 mx-auto">
           <a class="font-extrabold text-2xl md:3-xl lg:text-4xl cursor-pointer font-raleway">GoTicket</a>
-          <p class="text-[#ffffffcc] mt-4 ">GoTicket is a digital platform to make your daily
+          <p class="text-[#ffffffcc] mt-4 lg:w-[65%]">GoTicket is a digital platform to make your daily
             commuting better.</p>
         </div>
         <div class="md:w-1/2 flex flex-col md:items-end">
-          <p class="text-xl text-center md:text-right">Download our app</p>
+          <p class="md:text-xl text-center md:text-right">Download our app</p>
           <div class="flex border-2 items-center gap-2 px-[14px] py-[10px] rounded-lg mt-3 md:mt-5">
             <div>
               <a href="#">
@@ -446,17 +453,17 @@
               </a>
             </div>
             <div class="font-inter">
-              <h4 class="font-medium text-sm">GET IT ON</h4>
-              <h1 class="text-xl font-semibold leading-6">Google Play</h1>
+              <h4 class="font-medium text-xs md:text-sm">GET IT ON</h4>
+              <h1 class="text-lg md:text-xl font-semibold leading-6">Google Play</h1>
             </div>
           </div>
         </div>
       </div>
       <div class="font-inter my-4 md:my-7 flex justify-between flex-col md:flex-row gap-3 text-center md:text-left">
         <div class="">
-          <p class="text-[#ffffffb3] ">all rights reserved, GoTicket services limited.2024</p>
+          <p class="text-[#ffffffb3] text-sm md:text-base">all rights reserved, GoTicket services limited.2024</p>
         </div>
-        <div class="text-white font-medium flex gap-2 md:gap-6 lg:gap-8">
+        <div class="text-white font-medium flex gap-2 md:gap-6 lg:gap-8 text-sm md:text-base">
           <a href="#">Terms & Conditions</a>
           <a href="#">Return & refund policy</a>
           <a href="#">Privacy policy</a>
