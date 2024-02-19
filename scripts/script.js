@@ -47,6 +47,7 @@ for (const seat of seats) {
     setElementValueById("seat-left", seatLeft);
     setElementValueById("total-price", totalPrice);
     setElementValueById("final-price", totalPrice);
+
   });
 }
 
@@ -88,14 +89,14 @@ couponApplyBtn.addEventListener('click', function(){
 })
 
 
-// handling enable/disable coupon code submit button
+// handling enable/disable proceed button
 const phoneNumberInputField = document.getElementById("phone");
 phoneNumberInputField.addEventListener("keyup", function (e) {
   const text = e.target.value;
   let disabledBtn = document.getElementById("proceed-btn");
 
-  // if user has selected four seat, then he can apply coupon code
-  if(seatCounts===4 && text.length>0){
+  // if user has selected at least one seat, and entered phone number then he can proceed
+  if(seatCounts>0 && text.length>0){
     disabledBtn.removeAttribute("disabled");
   } else {
     disabledBtn.setAttribute('disabled',true);
