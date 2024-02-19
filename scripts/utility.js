@@ -55,3 +55,13 @@ function calculateDiscount(totalPrice,discountPercentage){
   
   return discount;
 }
+
+
+function setAlertBytId(elementId,msg){
+  document.getElementById(elementId).classList.remove('hidden');
+  setElementValueById(elementId,msg);
+  setTimeout(() => {
+    document.getElementById(elementId).classList.add('hidden');
+  }, 1500);
+}
+

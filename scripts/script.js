@@ -23,6 +23,7 @@ for (const seat of seats) {
 
     // handle Existing seats
     if (existingSeatArr.includes(elementId)) {
+      setAlertBytId('warning-msg','Warning! Seat removed');
       removeBackgroundColorById(elementId);
       const seatName = "seat-" + elementId;
       // remove existing taken seat
@@ -33,11 +34,14 @@ for (const seat of seats) {
 
       // limiting user can purchase upto 4 ticket
     } else if (seatCounts < 4) {
+      setAlertBytId('success-msg','Success! Seat added');
       setBackgroundColorById(elementId);
       addElementById(elementId);
       seatCounts++;
       seatLeft--;
       totalPrice += ticketPrice;
+    }else{
+      setAlertBytId('error-msg',"Error! You can't select more than 4 seat");
     }
 
     // enable couple code input field on changes to selected seat and reset discount;
@@ -58,7 +62,7 @@ couponCodeInputField.addEventListener("keyup", function (e) {
   couponText = text.split(" ").join("").toUpperCase();
   let disabledBtn = document.getElementById("coupon-apply-btn");
 
-  // if user has selected at least one seat, then he can apply coupon code
+  // if user has selected four seat, then he can apply coupon code
   if(seatCounts===4){
     if (couponText === "NEW15" || couponText === "COUPLE20") {
       disabledBtn.removeAttribute("disabled");
@@ -69,7 +73,6 @@ couponCodeInputField.addEventListener("keyup", function (e) {
 });
 
 // calculate discounted price on using coupon code
-
 const couponApplyBtn = document.getElementById("coupon-apply-btn");
 
 couponApplyBtn.addEventListener('click', function(){
@@ -77,14 +80,23 @@ couponApplyBtn.addEventListener('click', function(){
   if(seatCounts===4){
     if (couponText === "NEW15"){
       discount = calculateDiscount(price,15);
+      couponForm.classList.add('hidden');
+      setAlertBytId('success-msg','Success! Coupon applied');
     }else if(couponText === "COUPLE20"){
       discount = calculateDiscount(price,20);
+      couponForm.classList.add('hidden');
+      setAlertBytId('success-msg','Success! Coupon applied')
+    }else{
+      setAlertBytId('error-msg',"Error! Not a valid coupon");
+      discount = 0;
     }
+
     discount = Math.floor(discount);
     const discountedPrice = price - discount;
     setElementValueById('discount',discount) 
     setElementValueById('final-price',(discountedPrice)); 
-    couponForm.classList.add('hidden');
+  }else{
+    setAlertBytId('error-msg','Error! You must select at least 4 seat');
   }
 })
 
