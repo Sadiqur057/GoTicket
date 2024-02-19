@@ -47,7 +47,6 @@ for (const seat of seats) {
     setElementValueById("seat-left", seatLeft);
     setElementValueById("total-price", totalPrice);
     setElementValueById("final-price", totalPrice);
-
   });
 }
 
@@ -59,7 +58,7 @@ couponCodeInputField.addEventListener("keyup", function (e) {
   let disabledBtn = document.getElementById("coupon-apply-btn");
 
   // if user has selected at least one seat, then he can apply coupon code
-  if(seatCounts>0){
+  if(seatCounts===4){
     if (couponText === "NEW15" || couponText === "COUPLE20") {
       disabledBtn.removeAttribute("disabled");
     } else {
@@ -73,17 +72,19 @@ couponCodeInputField.addEventListener("keyup", function (e) {
 const couponApplyBtn = document.getElementById("coupon-apply-btn");
 
 couponApplyBtn.addEventListener('click', function(){
-  const price = getElementTextValueById('final-price')
-  if (couponText === "NEW15"){
-    discount = calculateDiscount(price,15);
-  }else if(couponText === "COUPLE20"){
-    discount = calculateDiscount(price,20);
+  const price = getElementTextValueById('final-price');
+  if(seatCounts===4){
+    if (couponText === "NEW15"){
+      discount = calculateDiscount(price,15);
+    }else if(couponText === "COUPLE20"){
+      discount = calculateDiscount(price,20);
+    }
+    discount = Math.floor(discount);
+    const discountedPrice = price - discount;
+    setElementValueById('discount',discount) 
+    setElementValueById('final-price',(discountedPrice)); 
+    couponForm.classList.add('hidden');
   }
-  discount = Math.floor(discount);
-  const discountedPrice = price - discount;
-  setElementValueById('discount',discount) 
-  setElementValueById('final-price',(discountedPrice)); 
-  couponForm.classList.add('hidden');
 })
 
 
@@ -92,10 +93,9 @@ const phoneNumberInputField = document.getElementById("phone");
 phoneNumberInputField.addEventListener("keyup", function (e) {
   const text = e.target.value;
   let disabledBtn = document.getElementById("proceed-btn");
-  console.log(text.length)
-  // if user has selected at least one seat, then he can apply coupon code
 
-  if(seatCounts>0 && text.length>0){
+  // if user has selected four seat, then he can apply coupon code
+  if(seatCounts===4 && text.length>0){
     disabledBtn.removeAttribute("disabled");
   } else {
     disabledBtn.setAttribute('disabled',true);
